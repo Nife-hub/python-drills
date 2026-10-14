@@ -1,18 +1,24 @@
 import string
 def longest_word(sentence):
-    words = sentence.split()
-    punc = str.maketrans('', '', string.punctuation)
-    clean_words = [word.translate(punc) for word in words]
-    if clean_words == []:
+    if sentence.strip() == "" :
         return ""
-    longest = clean_words[0]
+    result = longest_words(sentence)
+    return result[0]
+    # words = sentence.split()
+    # punc = str.maketrans('', '', string.punctuation)
+    # clean_words = [word.translate(punc) for word in words]
+    # if clean_words == []:
+    #     return ""
+    # longest = clean_words[0]
     
-    for word in clean_words:
-        if word == "":
-            return ""
-        if len(word) > len(longest):
-            longest = word
-    return longest
+    # for word in clean_words:
+    #     if word == "":
+    #         return ""
+    #     if len(word) > len(longest):
+    #         longest = word
+    # return longest
+
+    
 
 
 # bonus
@@ -22,7 +28,6 @@ def longest_words(sentence):
     clean_words = [word.translate(punc) for word in words]
     if clean_words == []:
         return []
-    longest = clean_words[0]
     longest = clean_words[0]
 
     for word in clean_words:
